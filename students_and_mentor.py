@@ -178,9 +178,26 @@ def averege_calc(target_list, course=None):
         print("Ошибка!")
         return
 
+# Альтернативный подсчет (среднее средних)
 
+
+def alter_avr_calc(target_list, course=None):
+    res = 0
+    for element in target_list:
+        res += element.avr_grades(course)
+    return res / len(target_list)
+
+
+# Проверяем базовый подсчет
 print(f'Средняя по Python для студентов: {averege_calc(studets_list, "Python")}')
 print(f'Средняя для студентов: {averege_calc(studets_list)}')
 
 print(f'Средняя по Python для преподавателей: {averege_calc(lectorer_list, "Python")}')
 print(f'Средняя для преподавателей: {averege_calc(lectorer_list)}')
+
+# Проверяем альтернативный подсчет (среднее средних)
+print(f'Средняя по Python для студентов: {alter_avr_calc(studets_list, "Python")}')
+print(f'Средняя для студентов: {alter_avr_calc(studets_list)}')
+
+print(f'Средняя по Python для преподавателей: {alter_avr_calc(lectorer_list, "Python")}')
+print(f'Средняя для преподавателей: {alter_avr_calc(lectorer_list)}')
